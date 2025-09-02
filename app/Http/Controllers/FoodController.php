@@ -35,7 +35,12 @@ class FoodController extends Controller
     }
 
 
-    // Atualiza os dados da comida no banco
+    public function show(food $food){
+        return view('food.show', ['food'=>$food]);
+    }
+
+
+    // Deleta os dados da comida
     public function destroy(Food $food, Request $request) {
         $food->delete($request->all()); // atualiza o registro
         return redirect('/food'); // volta para a lista
