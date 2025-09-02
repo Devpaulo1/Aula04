@@ -36,7 +36,12 @@
             <td><a href="#">Visualizar</a></td>        
 
             {{-- Link para excluir (vamos trocar por formulário depois) --}}
-            <td><a href="#">Excluir</a></td>
+            <td><form action ="/food/{{$food->id}}" method="POST">
+                @method('DELETE')
+                @csrf
+
+                <button type="submit">Excluir</button>
+            </td>
         </tr>
     @endforeach
 </table>
