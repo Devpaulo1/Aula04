@@ -33,6 +33,15 @@ class FoodController extends Controller
         $food->update($request->all()); // atualiza o registro
         return redirect('/food'); // volta para a lista
     }
+
+
+    // Atualiza os dados da comida no banco
+    public function destroy(Food $food, Request $request) {
+        $food->delete($request->all()); // atualiza o registro
+        return redirect('/food'); // volta para a lista
+    }
+
+
 }
 
 

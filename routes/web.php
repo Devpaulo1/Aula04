@@ -27,6 +27,8 @@ Route::get('/food/{food}/edit', [FoodController::class, 'edit']);
 // Atualiza os dados da comida (UPDATE)
 Route::put('/food/{food}', [FoodController::class, 'update']);
 
+// Remove os dados da comida (DELETA)
+Route::delete('/food/{food}', [FoodController::class, 'destroy']);
 
 //POST : Criar
 //GET: Mostrar
