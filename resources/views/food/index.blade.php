@@ -32,15 +32,14 @@
                         <th>ID</th>
                         <th>Nome do Prato</th>
                         <th>Calorias</th>
+                        <th>Categoria</th>
                         <th style="text-align: right;">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($allFood as $food)
                     <tr>
-                        <td>
-                            <span class="food-id">#{{ $food->id }}</span>
-                        </td>
+                        <td><span class="food-id">#{{ $food->id }}</span></td>
                         <td>
                             <div class="food-name">
                                 <div class="food-avatar">🍽️</div>
@@ -49,6 +48,9 @@
                         </td>
                         <td>
                             <span class="calories-badge">{{ $food->calories }} cal</span>
+                        </td>
+                        <td>
+                            <span class="calories-badge">{{ $food->category->name}}</span>
                         </td>
                         <td>
                             <div class="actions">

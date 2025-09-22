@@ -39,6 +39,20 @@
                 <input type="number" name="calories" id="calories" class="form-input" value="{{ $food->calories }}" required>
             </div>
 
+            <div class="form-group">
+                <label for="category_id" class="label-custom">Categoria</label>
+                {{-- Select com lista de categorias disponíveis --}}
+                <select name="category_id" id="category_id" class="form-input" required>
+                    <option value="">Selecione uma categoria</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" 
+                                {{ $food->category_id == $category->id ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="form-actions">
                 {{-- Botão para enviar o formulário --}}
                 <button type="submit" class="btn-submit">💾 Salvar Alterações</button>

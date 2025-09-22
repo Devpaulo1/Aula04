@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('foods', function (Blueprint $table) {
-            //
+        Schema::table('food', function (Blueprint $table) {
+            $table->integer('category_id') ->default(15);
         });
     }
 
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('foods', function (Blueprint $table) {
+        Schema::table('food', function (Blueprint $table) {
             //
         });
     }

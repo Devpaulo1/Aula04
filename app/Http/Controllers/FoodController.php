@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Food;
+use App\Models\Category;
 
 class FoodController extends Controller
 {
@@ -14,7 +15,7 @@ class FoodController extends Controller
 
     // Mostra o formulário de criação
     public function create() {
-        return view('food.create');
+        return view('food.create', ['categories' => Category::all()]);
     }
 
     // Salva uma nova comida no banco
@@ -25,7 +26,10 @@ class FoodController extends Controller
 
     // Mostra o formulário de edição
     public function edit(Food $food) {
-        return view('food.edit', ['food' => $food]);
+        return view('food.edit', [
+            'food' => $food,
+            'categories' => Category::all()
+        ]);
     }
 
     // Atualiza os dados da comida no banco

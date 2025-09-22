@@ -29,7 +29,8 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome do Categoria</th>
+                        <th>Categoria</th>
+                        <th>Comidas</th>
                         <th style="text-align: right;">Ações</th>
                     </tr>
                 </thead>
@@ -44,6 +45,7 @@
                                 <a href="/category/{{ $category->id }}">{{ $category->name }}</a>
                             </div>
                         </td>
+                        <td>{{$category->food->count()}}</td>
                         <td>
                             <div class="actions">
                                 <a href="/category/{{ $category->id }}/edit" class="btn btn-edit">
